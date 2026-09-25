@@ -1,0 +1,94 @@
+# =========================
+# Gradle
+# =========================
+.gradle/
+build/
+
+# Gradle Wrapper
+!gradle/wrapper/gradle-wrapper.jar
+
+# =========================
+# Spring / Java
+# =========================
+*.class
+*.log
+
+# =========================
+# IntelliJ IDEA
+# =========================
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# =========================
+# Eclipse / STS
+# =========================
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+.apt_generated
+bin/
+
+# =========================
+# NetBeans
+# =========================
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+
+# =========================
+# macOS
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS temporary files
+._*
+
+# =========================
+# Windows
+# =========================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# =========================
+# Environment / secrets
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# =========================
+# Application generated files
+# =========================
+/bin/
+/out/
