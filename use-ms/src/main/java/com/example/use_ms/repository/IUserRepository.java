@@ -1,7 +1,40 @@
 package com.example.use_ms.repository;
 
 import com.example.use_ms.model.UserEntity;
+import jakarta.persistence.Entity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
 
 public interface IUserRepository extends JpaRepository<UserEntity,String> {
+
+    /**
+     * JPQL
+     * SELECT * FROM USER WHERE name = ? ;
+     */
+    @Query(
+            """
+    SELECT u
+    FROM UserEntity u
+    WHERE u.name = :name
+
+"""
+    )
+    //and u.lastname = :lastamen
+    List<UserEntity> listarPorNombre(
+            @Param("name") String name
+    );
+
+
+    List<UserEntity> findByNameAndLastname(String name, String lastname);
+
+
+    List<UserEntity> findByNameContaining(String name);
+
+    // tipoDatoRetorno/void  nombreMetodo(TipoDatoPArametro nombreParametro);
+
+    List<UserEntity> findByDocument(String document);
+
 }

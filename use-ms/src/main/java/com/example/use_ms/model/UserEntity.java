@@ -2,11 +2,24 @@ package com.example.use_ms.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.UuidGenerator;
 
+import java.util.UUID;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class UserEntity {
 
     @Id
+    @UuidGenerator
     private String id;
 
     private String document;
@@ -16,52 +29,12 @@ public class UserEntity {
     private String lastname;
 
     private String email;
+/*
+    @PrePersist
+    public void generateId(){
+        if(this.id == null){
+            this.id = UUID.randomUUID().toString();
+        };
+    }*/
 
-    public UserEntity(String id, String document, String name, String lastname, String email) {
-        this.id = id;
-        this.document = document;
-        this.name = name;
-        this.lastname = lastname;
-        this.email = email;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getDocument() {
-        return document;
-    }
-
-    public void setDocument(String document) {
-        this.document = document;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
